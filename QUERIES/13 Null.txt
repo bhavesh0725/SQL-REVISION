@@ -1,0 +1,38 @@
+NULL Values
+Some rows / columns in databases can be empty - these values are treated as NULL.
+IS NULL and IS NOT NULL are used to filter for such entries.
+Review the sample syntax below
+
+select * from Flights
+where origin IS NULL;
+Task
+Write a query which meets the following conditions
+
+Passenger_id is blank or null
+Order by passenger_name
+Expected output
+┌──────────────┬────────────────┬────────┬─────────┬─────────────┐
+│ Passenger_id │ Passenger_name │ Gender │ Origin  │ Destination │
+├──────────────┼────────────────┼────────┼─────────┼─────────────┤
+│ NULL         │ Dia            │ Female │ Beijing │ Mumbai      │
+│ NULL         │ Roy            │ Male   │ London  │ Delhi       │
+│ NULL         │ Salim          │ Male   │ Ohio    │ New York    │
+└──────────────┴────────────────┴────────┴─────────┴─────────────┘
+
+sol:
+/* Write a query which meets the following conditions
+- Passenger_id is blank or null
+- Order by name
+*/
+
+select * from flights where Passenger_id is null order by Passenger_name;
+
+output:
+┌──────────────┬────────────────┬────────┬─────────┬─────────────┐
+│ Passenger_id │ Passenger_name │ Gender │ Origin  │ Destination │
+├──────────────┼────────────────┼────────┼─────────┼─────────────┤
+│ NULL         │ Dia            │ Female │ Beijing │ Mumbai      │
+│ NULL         │ Roy            │ Male   │ London  │ Delhi       │
+│ NULL         │ Salim          │ Male   │ Ohio    │ New York    │
+└──────────────┴────────────────┴────────┴─────────┴─────────────┘
+
