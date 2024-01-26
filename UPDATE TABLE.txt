@@ -46,3 +46,39 @@ output:
 │ 2           │ Ethan Chen     │ Hr         │
 │ 3           │ Julia Lee      │ Hr         │
 └─────────────┴────────────────┴────────────┘
+
+
+
+PRACTICE PROBLEM :
+
+Practice Problem - Update table
+In the previous problem we've added a new column 'Hourly_Pay'(mentioned below).
+Now write a query which does the following
+
+Set the 'Hourly_Pay' to 150 for the employees in Hr department.
+Output all the entries of table.
+Original table 'employee' has the following rows
+┌─────────────┬────────────────┬────────────┬────────────┐
+│ Employee_id │ Employee_Name  │ Department │ Hourly_Pay │
+├─────────────┼────────────────┼────────────┼────────────┤
+│ 1           │ Kayla Thompson │ Sales      │ 100        │
+│ 2           │ Ethan Chen     │ Hr         │ 100        │
+│ 3           │ Julia Lee      │ Operations │ 100        │
+│ 4           │ Marcus Garcia  │ Hr         │ 100        │
+└─────────────┴────────────────┴────────────┴────────────┘
+
+
+SOL: 
+update employee set hourly_pay = 150 where department = 'Hr';
+select * from employee;
+
+
+OUTPUT:
+┌─────────────┬────────────────┬────────────┬────────────┐
+│ Employee_id │ Employee_Name  │ Department │ Hourly_Pay │
+├─────────────┼────────────────┼────────────┼────────────┤
+│ 1           │ Kayla Thompson │ Sales      │ 100        │
+│ 2           │ Ethan Chen     │ Hr         │ 150        │
+│ 3           │ Julia Lee      │ Operations │ 100        │
+│ 4           │ Marcus Garcia  │ Hr         │ 150        │
+└─────────────┴────────────────┴────────────┴────────────┘
