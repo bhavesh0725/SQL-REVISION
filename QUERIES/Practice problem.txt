@@ -1,0 +1,81 @@
+Practice problem
+Let us combine what we have learnt from our 'SELECT', 'DISTINCT' and 'WHERE' queries.
+
+From the 'Flights' table - let us find the following
+
+Where the origin of the flight is 'New York'
+Output the passenger_name and gender
+Expected Output
+┌────────────────┬────────┐
+│ Passenger_name │ Gender │
+├────────────────┼────────┤
+│ Dia            │ Female │
+│ Jackson        │ Male   │
+└────────────────┴────────┘
+Remember that the column details are as follows
+
+Passenger_id
+Passenger_name
+Gender
+Origin
+Destination
+
+sol:
+/* Write a query that does the following
+- Where the origin of the flight is 'New York'
+- Output the passenger_name and gender */
+
+select passenger_name, gender from flights Where origin ='New York';
+
+
+output:
+
+┌────────────────┬────────┐
+│ Passenger_name │ Gender │
+├────────────────┼────────┤
+│ Dia            │ Female │
+│ Jackson        │ Male   │
+└────────────────┴────────┘
+
+
+
+
+
+Debug this query
+Let us combine what we have learnt from our 'SELECT', 'DISTINCT' and 'WHERE' queries.
+
+The Query written in the console is trying to do the following.
+
+Where the origin of the flight is 'Mumbai'
+Output the 'Distinct' names of 'Male' passengers
+Debug this query to get the correct output!
+
+Remember that the column details are as follows
+
+Passenger_id
+Passenger_name
+Gender
+Origin
+Destination
+
+sol:
+/* Debug this query to get the correct output */
+
+select distinct passenger_name
+from flights
+where gender = 'Male'and origin = 'Mumbai';
+
+/*
+The error in your SQL query is related to the use of a comma (,) instead of the logical operator AND to combine the
+conditions in the WHERE clause. The correct syntax for combining multiple conditions is to use AND or OR between them.*/
+
+
+
+output:
+
+┌────────────────┐
+│ Passenger_name │
+├────────────────┤
+│ Jackson        │
+│ Anthony        │
+└────────────────┘
