@@ -1,0 +1,33 @@
+Problem-Group By & Having
+Write a query to output the following from the table 'employee'
+
+Department and average payout on a single line
+Where total payout of the department is more than 40
+Rename the header for the 2nd column as 'avg_payout'
+Expected output
+┌────────────┬──────────────────┐
+│ Department │   avg_payout     │
+├────────────┼──────────────────┤
+│ Hr         │ 23.9886666666667 │
+│ Operations │ 11.227           │
+│ Sales      │ 20.34625         │
+└────────────┴──────────────────┘
+
+
+
+
+SELECT Department, 
+   Avg(Payout) as 'avg_payout'
+FROM employee
+GROUP BY Department
+HAVING Sum(Payout) > 40;
+
+
+
+┌────────────┬──────────────────┐
+│ Department │    avg_payout    │
+├────────────┼──────────────────┤
+│ Hr         │ 23.9886666666667 │
+│ Operations │ 11.227           │
+│ Sales      │ 20.34625         │
+└────────────┴──────────────────┘
