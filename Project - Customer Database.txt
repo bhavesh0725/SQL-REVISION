@@ -1,0 +1,197 @@
+Welcome to the Project to help you practice everything that you learnt about data manipulations.
+Imagine you are hired by a Supermarket chain as a database analyst. Your initial task is to create a database of customers.
+
+Task -1
+Create a table 'customer'.
+Add the below mentioned data to the table 'customer'.
+Output the entire table.
+
+
+
+Id	Name	Age	address
+1	John Smith	25	123 Main St
+2	Sarah Johnson	30	456 Broadway
+3	Michael Brown	45	789 5th Ave
+4	Jessica Davis	28	321 Elm St
+5	David Lee	35	555 Park Ave
+
+
+
+sol:
+
+/* Write a query which does the following
+- Create a table 'customer'.
+- Add the below mentioned data into it to the table 'customer'.
+- Output the entire table.
+*/
+
+Create table customer(id, name, age, address);
+insert into customer(id, name, age, address) values (1,"John Smith",25,"123 Main St"),(2,"Sarah Johnson",30,"456 Broadway"),(3,"Michael Brown",45,"789 5th Ave"),(4,"Jessica Davis",28,"321 Elm St"),(5,"David Lee",35,"555 Park Ave");
+select * from customer;
+
+
+output:
+
+┌────┬───────────────┬─────┬──────────────┐
+│ id │     name      │ age │   address    │
+├────┼───────────────┼─────┼──────────────┤
+│ 1  │ John Smith    │ 25  │ 123 Main St  │
+│ 2  │ Sarah Johnson │ 30  │ 456 Broadway │
+│ 3  │ Michael Brown │ 45  │ 789 5th Ave  │
+│ 4  │ Jessica Davis │ 28  │ 321 Elm St   │
+│ 5  │ David Lee     │ 35  │ 555 Park Ave │
+└────┴───────────────┴─────┴──────────────┘
+
+
+Practice problem-1
+Write a query which does the following
+
+Take the table from the previous problem and add an additional column 'email' to the table 'customer'.
+Consider the table 'customer' to be empty and insert the below data
+Output all the entires in the table.
+
+Id	Name	Age	address	email
+1	John Smith	25	Main St	john@ex.com
+2	Sarah Johnson	30	Broadway	sarah@ex.com
+
+sol:
+alter table customer add column email text;
+insert into customer(id, name, age, address, email) values(1, "John Smith", 25, "Main St", "john@ex.com"),(2, "Sarah Johnson", 30, "Broadway", "sarah@ex.com");
+select * from customer;
+
+
+output:
+
+┌────┬───────────────┬─────┬──────────┬──────────────┐
+│ Id │     Name      │ Age │ Address  │    email     │
+├────┼───────────────┼─────┼──────────┼──────────────┤
+│ 1  │ John Smith    │ 25  │ Main St  │ john@ex.com  │
+│ 2  │ Sarah Johnson │ 30  │ Broadway │ sarah@ex.com │
+└────┴───────────────┴─────┴──────────┴──────────────┘
+
+
+
+
+
+Practice problem-2
+Write a query which does the following
+
+Update the age to 52 for the customer with customer id 3.
+Output all the entires of the table.
+Original table has the following rows
+┌────┬───────────────┬─────┬──────────────┬───────────────────────────┐
+│ Id │     Name      │ Age │   Address    │           email           │
+├────┼───────────────┼─────┼──────────────┼───────────────────────────┤
+│ 1  │ John Smith    │ 25  │ 123 Main St  │ john@example.com          │
+│ 2  │ Sarah Johnson │ 30  │ 456 Broadway │ sarah@example.com         │
+│ 3  │ Michael Brown │ 45  │ 789 5th Ave  │ michael.brown@example.com │
+│ 4  │ Jessica Davis │ 28  │ 321 Elm St   │ jessica.davis@example.com │
+│ 5  │ David Lee     │ 35  │ 555 Park Ave │ David@example.com         │
+└────┴───────────────┴─────┴──────────────┴───────────────────────────┘
+
+
+
+sol:
+/* Write a query which does the following
+- Update the age to 52 for the customer with customer id 3.
+- Output all the entires of the table. */
+
+update customer set age = 52 where id = 3;
+select * from customer;
+
+
+output:
+
+┌────┬───────────────┬─────┬──────────────┬───────────────────────────┐
+│ Id │     Name      │ Age │   Address    │           email           │
+├────┼───────────────┼─────┼──────────────┼───────────────────────────┤
+│ 1  │ John Smith    │ 25  │ 123 Main St  │ john@example.com          │
+│ 2  │ Sarah Johnson │ 30  │ 456 Broadway │ sarah@example.com         │
+│ 3  │ Michael Brown │ 52  │ 789 5th Ave  │ michael.brown@example.com │
+│ 4  │ Jessica Davis │ 28  │ 321 Elm St   │ jessica.davis@example.com │
+│ 5  │ David Lee     │ 35  │ 555 Park Ave │ David@example.com         │
+└────┴───────────────┴─────┴──────────────┴───────────────────────────┘
+
+
+
+
+
+
+Practice problem-3
+Write a query which does the following
+
+Delete the entire row of the table 'customer' with customer id 1.
+Output the entire table once the above action is performed.
+Original table - 'customer' has the following rows
+┌────┬───────────────┬─────┬──────────────┬───────────────────────────┐
+│ Id │     Name      │ Age │   Address    │           email           │
+├────┼───────────────┼─────┼──────────────┼───────────────────────────┤
+│ 1  │ John Smith    │ 25  │ 123 Main St  │ john@example.com          │
+│ 2  │ Sarah Johnson │ 30  │ 456 Broadway │ sarah@example.com         │
+│ 3  │ Michael Brown │ 45  │ 789 5th Ave  │ michael.brown@example.com │
+│ 4  │ Jessica Davis │ 28  │ 321 Elm St   │ jessica.davis@example.com │
+└────┴───────────────┴─────┴──────────────┴───────────────────────────┘
+
+
+sol:
+/*Write a query which does the following
+- Delete the entire row of the customer with customer id 1.
+- Output the entire table once the above action is performed. */
+delete from customer where id = 1;
+select * from customer;
+
+
+
+output:
+┌────┬───────────────┬─────┬──────────────┬───────────────────────────┐
+│ Id │     Name      │ Age │   Address    │           email           │
+├────┼───────────────┼─────┼──────────────┼───────────────────────────┤
+│ 2  │ Sarah Johnson │ 30  │ 456 Broadway │ sarah@example.com         │
+│ 3  │ Michael Brown │ 45  │ 789 5th Ave  │ michael.brown@example.com │
+│ 4  │ Jessica Davis │ 28  │ 321 Elm St   │ jessica.davis@example.com │
+└────┴───────────────┴─────┴──────────────┴───────────────────────────┘
+
+
+
+
+
+
+
+Practice problem-4
+The Query written in the console is trying to create a table and add data to the same.
+Debug this query to execute it successfully!
+
+/* Debug this query */
+
+CREATE TABLE customer
+(
+  Id INT PRIMARY KEY,
+  Name VARCHAR(30),
+  Age INT,
+  Address VARCHAR(30),
+  email VARCHAR(30) UNIQUE
+);
+INSERT INTO customer(Id,Name,Age,Address,email)
+VALUES  (1, 'John Smith', 25,  '123 Main St','john@example.com'),
+        (2, 'Sarah Johnson', 30,'456 Broadway','sarah@example.com'),
+        (1, 'Michael Brown', 45,  '789 5th Ave','michael@example.com'),
+        (4, 'Jessica Davis', 28,  '321 Elm St','john@example.com');
+
+
+sol:
+/* Debug this query */
+
+CREATE TABLE customer
+(
+  Id INT PRIMARY KEY,
+  Name VARCHAR(30),
+  Age INT,
+  Address VARCHAR(30),
+  email VARCHAR(30) UNIQUE
+);
+INSERT INTO customer(Id,Name,Age,Address,email)
+VALUES  (1, 'John Smith', 25,  '123 Main St','john@example.com'),
+        (2, 'Sarah Johnson', 30,'456 Broadway','sarah@example.com'),
+        (3, 'Michael Brown', 45,  '789 5th Ave','michael@example.com'),
+        (4, 'Jessica Davis', 28,  '321 Elm St','johnn@example.com');
+
