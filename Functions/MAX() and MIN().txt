@@ -1,0 +1,47 @@
+MAX() and MIN()
+The MAX() and MIN() functions retrieve the maximum and minimum values from a column, correspondingly.
+
+Below is the query to find the highest and lowest age of the customers from the table customer
+
+SELECT MAX(Age)
+FROM customer;
+SELECT MIN(Age)
+FROM customer;
+Task
+Write a query to find the highest and lowest 'Hourly_pay' of the employees from the table 'employee'.
+
+Rename the column header for highest pay as 'max_pay'
+Rename the column header for lowest pay as 'min_pay'
+Expected output
+┌─────────┐
+│ max_pay │
+├─────────┤
+│ 55      │
+└─────────┘
+┌─────────┐
+│ min_pay │
+├─────────┤
+│ 28      │
+└─────────┘
+
+
+sol:
+/* Solution as follows */
+
+SELECT MAX(Hourly_Pay) as 'max_pay'
+FROM employee;
+SELECT MIN(Hourly_Pay) as 'min_pay'
+FROM employee;
+--this gives two diffferent output according to need we can customize the query
+
+output:
+┌─────────┐
+│ max_pay │
+├─────────┤
+│ 55      │
+└─────────┘
+┌─────────┐
+│ min_pay │
+├─────────┤
+│ 28      │
+└─────────┘
